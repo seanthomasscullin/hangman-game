@@ -1,0 +1,58 @@
+html,body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	background-image: url(../images/background.jpg);
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+/*.navbar-brand {
+	background-color: #666666;
+}*/
+
+.container {
+	flex: 1 0 auto;
+	position: relative;
+}
+
+.container-background {
+	background-image: url(../images/desert.jpg);
+}
+
+/*.container {
+	flex: 1 0 auto;
+	position: relative;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}*/
+
+.navbar-brand, .navbar-text {
+	color: orange;
+}
+
+/*.footer {
+	display: table-row;
+	background: #666666;
+	padding: 20px 0px 20px 0px;
+	margin-top: 20px;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 0.8em;
+	color: #999999;
+	border-top: solid 5px #4aaaa5;
+}*/
+
+.footer {
+	background: #666666;
+	padding: 20px 0px 20px 0px;
+	margin: 0 auto;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 0.8em;
+	color: #999999;
+	border-top: solid 5px #4aaaa5;
+}
+
+.border {
+	border: 0.5px solid orange;
+}

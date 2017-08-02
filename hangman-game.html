@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Hangman!</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="assets/javascript/game.js"></script>
+	<script src="assets/javascript/methods.js"></script>
+</head>
+
+<body>
+	
+	<audio id="winSound" src="assets/sounds/winSound-trumphet.mp3"></audio>
+
+	<header>
+		<header>
+		<nav class="navbar navbar-static-top">
+			<div class="container border container-background">
+				<div class="navbar-brand text-center">Hangman</div>
+				<div class="navbar-text pull-right">
+					<button type="button" id="resetButton" class="btn btn-warning" onclick="hangman.resetScreen()">Reset</button>
+				</div>
+			</div>
+		</nav>
+	</header>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-4 text-center">
+				<div class="panel panel-info class">
+			    	<div class="panel-heading">Relaxing images!</div>
+			     	<br>
+			     	<div class="panel-body">
+			     		<img src="assets/images/panel.jpg" class="img-responsive center-block">
+			     	</div>
+				</div>
+			</div>
+			<div class="col-md-4 text-center">
+				<div class="row">
+				    <div class="panel panel-info class">
+				    	<div class="panel-heading">Can you guess the word?</div>
+				     	<div class="panel-body">
+				     		<span id="answer-on-display">Welcome to my Hangman game! Press any key to play.</span>
+				     		<br>
+							<span id="answer-on-display"></span>
+						</div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-xs-4">
+						 <div class="panel panel-info class">
+				   			<div class="panel-heading">Wins</div>
+					     	<div class="panel-body">
+					     		<span id="number-of-wins">0</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-4">
+						<div class="panel panel-info class">
+					   		<div class="panel-heading">Your guess</div>
+					     	<div class="panel-body">
+					     		<span id="your-guess"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-4">
+						<div class="panel panel-info class">				   
+							<div class="panel-heading">Losses</div>
+					     	<div class="panel-body">
+								<span id="number-of-losses">0</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-xs-6"> 
+						 <div class="panel panel-info class">				   
+							<div class="panel-heading">Guesses left</div>
+						    <div class="panel-body">
+								<span id="guesses-remaining">5</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-xs-6"> 
+						 <div class="panel panel-info class">				   
+							<div class="panel-heading">Previous wrong guesses</div>
+						    <div class="panel-body">
+								<span id="wrong-guesses"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+<!doctype html>
+<html>
+
+<!-- <head>
+	<title>Hangman!</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="assets/javascript/game-object.js"></script>
+	<script src="assets/javascript/methods.js"></script>
+</head>
+
+<body>
+	
+	<audio id="winSound" src="assets/sounds/winSound-trumphet.mp3"></audio>
+
+	<header>
+		<header>
+		<nav class="navbar navbar-static-top">
+			<div class="container border container-background">
+				<div class="navbar-brand text-center">Hangman</div>
+				<div class="navbar-text pull-right">
+					<button type="button" id="resetButton" class="btn btn-warning" onclick="hangman.resetScreen()">Reset</button>
+				</div>
+			</div>
+		</nav>
+	</header>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-4 text-center">
+				<div class="panel panel-info class">
+			    	<div class="panel-heading">Relaxing images!</div>
+			     	<br>
+			     	<div class="panel-body">
+			     		<img src="assets/images/panel-paper.jpg" class="img-responsive">
+			     	</div>
+				</div>
+			</div>
+			<div class="col-md-4 text-center">
+			    <div class="panel panel-info class">
+			    	<div class="panel-heading">Game screen</div>
+			     	<div class="panel-body">
+			     		<p><span id="welcome-message">Welcome to my Hangman game! Press any key to play.</span></p></p>
+			     		<br>
+						<p><span id="guess-the-word-line"></span></p>
+						<br>
+						<p><span id="answer-on-display"></span></p>
+						<br>
+						<p><span id ="your-guess-line"></span><span id="your-guess"></span></p>
+						<br>
+						<p><span id="number-of-wins-line"></span><span id="number-of-wins"></span></p>
+						<br>
+						<p><span id="number-of-losses-line"></span><span id="number-of-losses"></span></p>
+						<br>
+						<p><span id="number-of-guesses-remaining-line"></span><span id="guesses-remaining"></span></p>
+						<br>
+						<p><span id="letters-already-guessed-line"></span></p>
+						<br>
+						<span id="wrong-guesses"></span>
+			     	</div>
+			    </div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+
+	<footer class="footer text-center border">
+		<div class="container-fluid">
+    		<p>&copy; Copyright 2017 Sean Scullin</p>
+     	</div>
+    </footer>
+</body>
+</html> -->
